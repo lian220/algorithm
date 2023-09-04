@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MostAlphbet {
     public static void main(String[] args) {
-        String str = "z";
+        String str = "baaaddd";
         int[] alphabetArr = new int[26];
         str = str.toLowerCase();
         for (char x: str.toCharArray()) {
@@ -21,10 +21,15 @@ public class MostAlphbet {
         char answer = 0;
         for (int i = 0 ; i < alphabetArr.length; i++) {
             mostAlphabet = Math.max(mostAlphabet, alphabetArr[i]);
-            if(mostAlphabet == alphabetArr[i] && alphabetArr[i] != 0) {
-                return '?';
-            } else if (mostAlphabet < alphabetArr[i]) {
+        }
+
+        int cnt = 0;
+        for(int i = 0; i < alphabetArr.length; i++) {
+            if(mostAlphabet == alphabetArr[i]) {
                 answer = (char) (i + 'A');
+                cnt++;
+            } else if(cnt == 2){
+                return '?';
             }
         }
         return answer;
