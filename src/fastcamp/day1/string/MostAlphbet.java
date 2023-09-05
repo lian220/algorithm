@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MostAlphbet {
     public static void main(String[] args) {
-        String str = "baaaddd";
+        String str = "baaadddFFFeeFEd";
         int[] alphabetArr = new int[26];
         str = str.toLowerCase();
         for (char x: str.toCharArray()) {
